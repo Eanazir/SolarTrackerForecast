@@ -5,11 +5,11 @@ import numpy as np
 from datetime import timedelta
 
 # Constants
-CSV_FILE = "combined_data.csv"
-IMAGE_FOLDER = "training_images"
+CSV_FILE = "data/combined_data.csv"
+IMAGE_FOLDER = "data/training_images"
 OUTPUT_FOLDER = "output"  # Folder to save filtered data/images
 START_DATE = "20230101"  # Specify the start date (YYYYMMDD)
-DAYS = 60  # Number of days to extract
+DAYS = 30  # Number of days to extract
 
 # Ensure the output folder exists
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
