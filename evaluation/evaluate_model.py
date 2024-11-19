@@ -1,23 +1,25 @@
+# evaluation/evaluate_model.py
+
 import numpy as np
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 import matplotlib.pyplot as plt
 
-def evaluate_model(model, met_data, images):
+def evaluate_model(model, merged_data):
     # Prepare data (similar to training data preparation)
     sequence_length = 60
     features = ['Temperature', 'Humidity', 'Pressure', 'Wind Speed', 'Wind Dir Sin', 'Wind Dir Cos',
                 'Hour', 'DayOfYear']  # Exclude direct current irradiance as a feature
 
-    X_num = met_data[features].values
-    y = met_data[[f'Irradiance_{minutes}min_ahead' for minutes in [5, 15, 30, 60]]].values
-    X_img = np.array(images)
+    X_num = merged_data[features].values
+    y = merged_data[[f'Irradiance_{minutes}min_ahead' for minutes in [5, 15, 30, 60]]].values
+    X_img = np.array(merged_data['Image'].tolist())
 
     # Create sequences
     def create_sequences(X_num, X_img, y, seq_length):
         X_num_seq, X_img_seq, y_seq = [], [], []
         for i in range(len(X_num) - seq_length):
             X_num_seq.append(X_num[i:i+seq_length])
-            X_img_seq.append(X_img[i+seq_length-1])
+            X_img_seq.append(X_img[i+seq_length-1])  # Use image at last timestamp
             y_seq.append(y[i+seq_length-1])
         return np.array(X_num_seq), np.array(X_img_seq), np.array(y_seq)
 

@@ -13,10 +13,10 @@ def preprocess_images(image_folder):
 
     for path in image_paths:
         # Extract timestamp from image filename
-        # Assuming filename format: image_YYYYMMDD_HHMM.jpg
+        # Assuming filename format: YYYYMMDDHHMMSS.jpg
         filename = os.path.basename(path)
-        timestamp_str = filename.replace('image_', '').replace('.jpg', '')
-        timestamp = pd.to_datetime(timestamp_str, format='%Y%m%d_%H%M')
+        timestamp_str = filename.replace('.jpg', '')
+        timestamp = pd.to_datetime(timestamp_str, format='%Y%m%d%H%M%S')
 
         img = cv2.imread(path)
         if img is None:

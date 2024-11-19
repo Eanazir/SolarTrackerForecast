@@ -12,10 +12,10 @@ def main():
     images, image_timestamps = preprocess_images('data/images/')
 
     # Step 2: Train Model
-    model, history = train_hybrid_model(met_data, images, image_timestamps)
+    model, history, merged_data = train_hybrid_model(met_data, images, image_timestamps)
 
     # Step 3: Evaluate Model
-    evaluate_model(model, met_data, images, image_timestamps)
+    evaluate_model(model, merged_data)
 
 if __name__ == '__main__':
     main()
