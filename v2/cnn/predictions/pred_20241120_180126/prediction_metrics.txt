@@ -1,0 +1,6 @@
+Solar Lux Prediction Metrics
+================================
+
+Mean Absolute Error: 22270.23 W/m²
+Root Mean Square Error: 23466.45 W/m²
+R² Score: -0.4058

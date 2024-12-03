@@ -1,0 +1,6 @@
+Solar Irradiance Prediction Metrics
+================================
+
+Mean Absolute Error: 65.74 W/m²
+Root Mean Square Error: 70.95 W/m²
+R² Score: -3.5916

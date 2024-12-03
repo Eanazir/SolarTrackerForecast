@@ -1,4 +1,8 @@
 .DS_Store
 models/__pycache__/
-scaler_y.pkl
-data/
+v1/data/
+fetch_data.py
+fetch_images.py
+scripts/fetch_data.py
+v2/cnn/pics
+*.keras

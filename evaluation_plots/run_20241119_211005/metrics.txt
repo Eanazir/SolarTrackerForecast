@@ -1,9 +1,0 @@
-Evaluation Metrics:
-===================
-
-5-Minute Ahead Prediction - RMSE: 108.54, MAE: 92.04, R²: 0.70
-15-Minute Ahead Prediction - RMSE: 100.76, MAE: 83.58, R²: 0.74
-30-Minute Ahead Prediction - RMSE: 103.58, MAE: 89.00, R²: 0.73
-60-Minute Ahead Prediction - RMSE: 103.09, MAE: 86.77, R²: 0.74
-
-Overall Performance - RMSE: 104.03, MAE: 87.85, R²: 0.73
